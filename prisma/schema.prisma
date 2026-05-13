@@ -5,7 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -20,7 +20,7 @@ model User {
   firstName String?
   lastName  String?
   createdAt DateTime @default(now())
-  updaterAt DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
   //relationships
   appointments Appointment[]
@@ -52,7 +52,7 @@ model Appointment {
   date      DateTime
   time      String //store time as string i.e. 14:30
   duration  Int
-  status    AppintmentStatus @default(CONFIRMED)
+  status    AppointmentStatus @default(CONFIRMED)
   notes     String?
   reason    String? //reason for appointment - teeth cleaning? emergency visit? etc.
   createdAt DateTime         @default(now())
@@ -74,7 +74,7 @@ enum Gender {
   FEMALE
 }
 
-enum AppintmentStatus {
+enum AppointmentStatus {
   CONFIRMED
   COMPLETED
 }
