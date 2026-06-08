@@ -86,7 +86,7 @@ function PricingSection() {
               </div>
             </div>
 
-            <div className="relative bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-xl rounded-3xl p-8 border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20 scale-105">
+            <div className="relative bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-xl rounded-3xl p-8 border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20 lg:scale-105">
               <div className="space-y-6">
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold">AI Basic</h3>
