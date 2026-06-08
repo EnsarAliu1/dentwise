@@ -124,18 +124,16 @@ function VapiWidget() {
           <div className="aspect-video flex flex-col items-center justify-center p-6 relative">
             {/* AI VOICE ANIMATION */}
             <div
-              className={`absolute inset-0 ${
-                isSpeaking ? "opacity-30" : "opacity-0"
-              } transition-opacity duration-300`}
+              className={`absolute inset-0 ${isSpeaking ? "opacity-30" : "opacity-0"
+                } transition-opacity duration-300`}
             >
               {/* voice wave animation when speaking */}
               <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-center items-center h-20">
                 {[...Array(5)].map((_, i) => (
                   <div
                     key={i}
-                    className={`mx-1 h-16 w-1 bg-primary rounded-full ${
-                      isSpeaking ? "animate-sound-wave" : ""
-                    }`}
+                    className={`mx-1 h-16 w-1 bg-primary rounded-full ${isSpeaking ? "animate-sound-wave" : ""
+                      }`}
                     style={{
                       animationDelay: `${i * 0.1}s`,
                       height: isSpeaking ? `${Math.random() * 50 + 20}%` : "5%",
@@ -148,15 +146,14 @@ function VapiWidget() {
             {/* AI LOGO */}
             <div className="relative size-32 mb-4">
               <div
-                className={`absolute inset-0 bg-primary opacity-10 rounded-full blur-lg ${
-                  isSpeaking ? "animate-pulse" : ""
-                }`}
+                className={`absolute inset-0 bg-primary opacity-10 rounded-full blur-lg ${isSpeaking ? "animate-pulse" : ""
+                  }`}
               />
 
               <div className="relative w-full h-full rounded-full bg-card flex items-center justify-center border border-border overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-primary/5"></div>
                 <Image
-                  src="/logo.png"
+                  src="/logo-2.png"
                   alt="AI Dental Assistant"
                   width={80}
                   height={80}
@@ -170,24 +167,22 @@ function VapiWidget() {
 
             {/* SPEAKING INDICATOR */}
             <div
-              className={`mt-4 flex items-center gap-2 px-3 py-1 rounded-full bg-card border border-border ${
-                isSpeaking ? "border-primary" : ""
-              }`}
+              className={`mt-4 flex items-center gap-2 px-3 py-1 rounded-full bg-card border border-border ${isSpeaking ? "border-primary" : ""
+                }`}
             >
               <div
-                className={`w-2 h-2 rounded-full ${
-                  isSpeaking ? "bg-primary animate-pulse" : "bg-muted"
-                }`}
+                className={`w-2 h-2 rounded-full ${isSpeaking ? "bg-primary animate-pulse" : "bg-muted"
+                  }`}
               />
 
               <span className="text-xs text-muted-foreground">
                 {isSpeaking
                   ? "Speaking..."
                   : callActive
-                  ? "Listening..."
-                  : callEnded
-                  ? "Call ended"
-                  : "Waiting..."}
+                    ? "Listening..."
+                    : callEnded
+                      ? "Call ended"
+                      : "Waiting..."}
               </span>
             </div>
           </div>
@@ -250,13 +245,12 @@ function VapiWidget() {
       {/* CALL CONTROLS */}
       <div className="w-full flex justify-center gap-4">
         <Button
-          className={`w-44 text-xl rounded-3xl ${
-            callActive
+          className={`w-44 text-xl rounded-3xl ${callActive
               ? "bg-destructive hover:bg-destructive/90"
               : callEnded
-              ? "bg-red-500 hover:bg-red-700"
-              : "bg-primary hover:bg-primary/90"
-          } text-white relative`}
+                ? "bg-red-500 hover:bg-red-700"
+                : "bg-primary hover:bg-primary/90"
+            } text-white relative`}
           onClick={toggleCall}
           disabled={connecting || callEnded}
         >
@@ -268,10 +262,10 @@ function VapiWidget() {
             {callActive
               ? "End Call"
               : connecting
-              ? "Connecting..."
-              : callEnded
-              ? "Call Ended"
-              : "Start Call"}
+                ? "Connecting..."
+                : callEnded
+                  ? "Call Ended"
+                  : "Start Call"}
           </span>
         </Button>
       </div>

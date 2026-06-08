@@ -16,17 +16,16 @@ function Navbar() {
         {/* LOGO */}
         <div className="flex items-center gap-8">
           <Link href="/dashboard" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="DentWise Logo" width={32} height={32} className="w-11" />
+            <Image src="/logo-2.png" alt="DentWise Logo" width={32} height={32} className="w-11" />
           </Link>
 
           <div className="flex items-center gap-6">
             <Link
               href="/dashboard"
-              className={`flex items-center gap-2 transition-colors ${
-                pathname === "/dashboard"
+              className={`flex items-center gap-2 transition-colors ${pathname === "/dashboard"
                   ? "text-foreground hover:text-primary font-medium"
                   : "text-muted-foreground hover:text-foreground"
-              }`}
+                }`}
             >
               <HomeIcon className="w-4 h-4" />
               <span className="hidden md:inline">Dashboard</span>
@@ -34,9 +33,8 @@ function Navbar() {
 
             <Link
               href="/appointments"
-              className={`flex items-center gap-2 transition-colors hover:text-foreground ${
-                pathname === "/appointments" ? "text-foreground" : "text-muted-foreground"
-              }`}
+              className={`flex items-center gap-2 transition-colors hover:text-foreground ${pathname === "/appointments" ? "text-foreground" : "text-muted-foreground"
+                }`}
             >
               <CalendarIcon className="w-4 h-4" />
               <span className="hidden md:inline">Appointments</span>
@@ -44,18 +42,16 @@ function Navbar() {
 
             <Link
               href="/voice"
-              className={`flex items-center gap-2 transition-colors hover:text-foreground ${
-                pathname === "/voice" ? "text-foreground" : "text-muted-foreground"
-              }`}
+              className={`flex items-center gap-2 transition-colors hover:text-foreground ${pathname === "/voice" ? "text-foreground" : "text-muted-foreground"
+                }`}
             >
               <MicIcon className="w-4 h-4" />
               <span className="hidden md:inline">Voice</span>
             </Link>
             <Link
               href="/pro"
-              className={`flex items-center gap-2 transition-colors hover:text-foreground ${
-                pathname === "/pro" ? "text-foreground" : "text-muted-foreground"
-              }`}
+              className={`flex items-center gap-2 transition-colors hover:text-foreground ${pathname === "/pro" ? "text-foreground" : "text-muted-foreground"
+                }`}
             >
               <CrownIcon className="w-4 h-4" />
               <span className="hidden md:inline">Pro</span>

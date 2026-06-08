@@ -12,23 +12,23 @@ import {
   Text,
 } from "@react-email/components";
 
-interface AppointmentConfirmationEmailProps{
-    doctorName: string;
-    appointmentDate: string;
-    appointmentTime: string;
-    appointmentType: string;
-    duration: string;
-    price: string;
+interface AppointmentConfirmationEmailProps {
+  doctorName: string;
+  appointmentDate: string;
+  appointmentTime: string;
+  appointmentType: string;
+  duration: string;
+  price: string;
 }
 
 function AppointmentConfirmationEmail({
-    doctorName,
-    appointmentDate,
-    appointmentTime,
-    appointmentType,
-    duration,
-    price,
-}:AppointmentConfirmationEmailProps) {
+  doctorName,
+  appointmentDate,
+  appointmentTime,
+  appointmentType,
+  duration,
+  price,
+}: AppointmentConfirmationEmailProps) {
   return (
     <Html>
       <Head />
@@ -37,7 +37,7 @@ function AppointmentConfirmationEmail({
         <Container style={container}>
           <Section style={logoContainer}>
             <Img
-              src="https://i.ibb.co.com/tRy6cC2/logo.png"
+              src="https://i.ibb.co.com/tRy6cC2/logo-2.png"
               width="50"
               height="50"
               alt="DentWise"

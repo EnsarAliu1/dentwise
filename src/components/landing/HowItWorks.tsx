@@ -45,7 +45,7 @@ function HowItWorks() {
 
               {/* Icon */}
               <div className="w-20 h-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 mb-6">
-                <Image src="/audio.png" alt="Voice Chat" width={40} height={40} className="w-14" />
+                <Image src="/audio-2.png" alt="Voice Chat" width={40} height={40} className="w-14" />
               </div>
 
               <h3 className="text-2xl font-bold mb-4 text-center">Ask Questions</h3>
@@ -76,7 +76,7 @@ function HowItWorks() {
 
               {/* Icon */}
               <div className="w-20 h-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 mb-6">
-                <Image src="/brain.png" alt="AI Brain" width={40} height={40} className="w-14" />
+                <Image src="/brain-2.png" alt="AI Brain" width={40} height={40} className="w-14" />
               </div>
 
               <h3 className="text-2xl font-bold mb-4 text-center">Get Expert Advice</h3>
@@ -107,7 +107,7 @@ function HowItWorks() {
 
               {/* Icon */}
               <div className="w-20 h-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 mb-6">
-                <Image src="/calendar.png" alt="Calendar" width={40} height={40} className="w-14" />
+                <Image src="/calendar-2.png" alt="Calendar" width={40} height={40} className="w-14" />
               </div>
 
               <h3 className="text-2xl font-bold mb-4 text-center">Book & Get Care</h3>
