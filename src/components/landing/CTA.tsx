@@ -18,7 +18,7 @@ function CTA() {
                 <span className="text-xs font-medium text-primary">Ready When You Are</span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight">
                 <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
                   Your dental health
                 </span>
@@ -28,7 +28,7 @@ function CTA() {
                 </span>
               </h2>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-md text-muted-foreground leading-relaxed">
                 Join 1,200+ patients who trust our AI for instant guidance and personalized care.
               </p>
             </div>

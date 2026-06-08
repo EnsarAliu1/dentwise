@@ -70,7 +70,7 @@ function Hero() {
               </div>
 
               {/*USER TESTIMONIALS*/}
-              <div className='pt-8'>
+              <div className='py-8'>
                 <div className='flex items-center gap-6'>
                   {/*USER AVATARS*/}
                   <div className='flex -space-x-3'>

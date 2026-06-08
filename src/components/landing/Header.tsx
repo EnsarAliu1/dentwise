@@ -13,7 +13,7 @@ function Header() {
           <span className='font-semibold text-lg'>DentWise</span>
         </Link>
 
-        <div className='hidden md:flex items-center gap-8'>
+        <div className='hidden md:flex items-center gap-8 text-lg'>
           <a href="#" className='text-muted-foreground hover:text-foreground'>
             How it Works
           </a>
