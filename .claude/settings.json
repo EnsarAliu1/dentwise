@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run lint)",
+      "Bash(npm run format)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(npx biome *)",
+      "Bash(npx prisma generate)",
+      "Bash(npx prisma validate)",
+      "Bash(npx prisma format)",
+      "Bash(npx prisma migrate status)",
+      "Bash(npx prisma migrate diff *)",
+      "Bash(git status *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git diff)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git branch)",
+      "Bash(git switch *)",
+      "Bash(git checkout -b *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git stash *)",
+      "Bash(git restore *)",
+      "mcp__figma__get_design_context",
+      "mcp__figma__get_screenshot",
+      "mcp__figma__get_metadata",
+      "mcp__figma__get_variable_defs",
+      "mcp__neon__list_projects",
+      "mcp__neon__describe_project",
+      "mcp__neon__list_branches",
+      "mcp__neon__describe_branch",
+      "mcp__neon__get_database_tables",
+      "mcp__neon__describe_table_schema",
+      "mcp__neon__compare_database_schema"
+    ],
+    "ask": [
+      "Bash(npm install *)",
+      "Bash(npm i *)",
+      "Bash(npm uninstall *)",
+      "Bash(npx shadcn *)",
+      "Bash(npx prisma migrate dev *)",
+      "Bash(npx prisma migrate resolve *)",
+      "Bash(rm *)",
+      "Bash(git mv *)",
+      "Bash(git checkout *)",
+      "Bash(git branch -D *)",
+      "Edit(./prisma/schema.prisma)",
+      "Edit(./package.json)",
+      "Edit(./next.config.ts)",
+      "Edit(./src/middleware.ts)",
+      "mcp__neon__create_branch",
+      "mcp__neon__run_sql",
+      "mcp__neon__run_sql_transaction",
+      "mcp__neon__prepare_database_migration",
+      "mcp__neon__complete_database_migration",
+      "mcp__neon__delete_branch",
+      "mcp__neon__reset_from_parent",
+      "mcp__neon__get_connection_string"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Edit(./.env)",
+      "Edit(./.env.*)",
+      "Bash(cat .env*)",
+      "Bash(git push *)",
+      "Bash(git push)",
+      "Bash(git pull *)",
+      "Bash(git pull)",
+      "Bash(git merge *)",
+      "Bash(git rebase *)",
+      "Bash(git reset --hard *)",
+      "Bash(git reset --hard)",
+      "Bash(git clean *)",
+      "Bash(npx prisma db push *)",
+      "Bash(npx prisma db push)",
+      "Bash(npx prisma migrate reset *)",
+      "Bash(npx prisma migrate reset)",
+      "Bash(npx prisma migrate deploy *)",
+      "Bash(npx prisma migrate deploy)",
+      "mcp__neon__delete_project",
+      "mcp__neon__delete_postgres_database",
+      "mcp__neon__set_default_branch"
+    ]
+  },
+  "enabledMcpjsonServers": ["figma", "neon"],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/session-context.sh\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/format.sh\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/notify.ps1", "-Title", "DentWise - Claude needs you", "-Message", "Permission needed - check VS Code"]
+          }
+        ]
+      },
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/notify.ps1", "-Title", "DentWise - Claude is waiting", "-Message", "Claude is waiting for your input"]
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/notify.ps1", "-Title", "DentWise - Done", "-Message", "Claude finished - read the summary"]
+          }
+        ]
+      }
+    ]
+  }
+}
